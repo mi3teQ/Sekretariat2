@@ -8,18 +8,55 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TabControl>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5" Margin="0,0,259,107">
+            <TabItem Header="Uczniowie">
+                <Grid Background="#FFE5E5E5" Margin="9,0,150,107" Height="321">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="17*"/>
-                        <ColumnDefinition Width="90*"/>
+                        <ColumnDefinition Width="89*"/>
+                        <ColumnDefinition Width="94*"/>
+                        <ColumnDefinition Width="377*"/>
                     </Grid.ColumnDefinitions>
+                    <ListView x:Name="ListView_Uczniowie" Margin="5,10,5,72" Grid.ColumnSpan="3">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5" Margin="0,0,275,87"/>
+            <TabItem Header="Nauczyciele ">
+                <Grid Background="#FFE5E5E5" Margin="0,0,150,87" Height="321">
+                    <ListView x:Name="ListView_Nauczyciele" Margin="5,0,5,41">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
             </TabItem>
-        </TabControl>
+            <TabItem Header="Pracownicy ">
+                <Grid Background="#FFE5E5E5" Margin="0,0,150,87" Height="349">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="593*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListView x:Name="ListView_Pracownicy" Margin="5,0,181,55" Grid.ColumnSpan="2">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            
 
+        </TabControl>
+        <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="670,40,0,0" VerticalAlignment="Top" Height="29" Width="77"/>
+        <Button x:Name="Btn_Zmien" Content="Zmien" Height="29" Width="77" Margin="670,74,53,331"/>
+        <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="77" Margin="670,108,53,297"/>
+        <Button x:Name="Btn_Zaladuj" Content="Zaldauj" Height="29" Width="77" Margin="670,142,53,263"/>
+        <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="77" Margin="670,176,53,229"/>
     </Grid>
 </Window>
