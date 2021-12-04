@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sekretariat2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="471" Width="1013">
     <Grid>
         <TabControl>
             <TabItem Header="Uczniowie">
@@ -18,7 +18,12 @@
                     <ListView x:Name="ListView_Uczniowie" Margin="5,10,5,72" Grid.ColumnSpan="3">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn/>
+                                <GridViewColumn Header="Imie" Width="60"/>
+                                <GridViewColumn Header="Drugie Imie" Width="80"/>
+                                <GridViewColumn Header="Nazwisko" Width="80"/>
+                                <GridViewColumn Header="Nazwisko Panienskie" Width="120"/>
+                                <GridViewColumn Header="Imiona rodzicow" Width="100"/>
+                                <GridViewColumn Header="Imiona rodzicow" Width="100"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -50,13 +55,13 @@
                     </ListView>
                 </Grid>
             </TabItem>
-            
+
 
         </TabControl>
-        <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="670,40,0,0" VerticalAlignment="Top" Height="29" Width="77"/>
-        <Button x:Name="Btn_Zmien" Content="Zmien" Height="29" Width="77" Margin="670,74,53,331"/>
-        <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="77" Margin="670,108,53,297"/>
-        <Button x:Name="Btn_Zaladuj" Content="Zaldauj" Height="29" Width="77" Margin="670,142,53,263"/>
-        <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="77" Margin="670,176,53,229"/>
+        <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="906,47,0,0" VerticalAlignment="Top" Height="29" Width="78"/>
+        <Button x:Name="Btn_Zmien" Content="Zmien" Height="29" Width="77" Margin="907,81,29,345"/>
+        <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="77" Margin="907,115,29,311"/>
+        <Button x:Name="Btn_Zaladuj" Content="Zaldauj" Height="29" Width="77" Margin="907,149,29,277"/>
+        <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="77" Margin="907,183,29,243"/>
     </Grid>
 </Window>
