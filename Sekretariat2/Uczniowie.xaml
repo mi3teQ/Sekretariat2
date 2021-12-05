@@ -30,6 +30,8 @@
         <TextBox x:Name="Txtbox_plec" HorizontalAlignment="Left" Margin="249,40,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Klasa:" HorizontalAlignment="Left" Margin="245,76,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="Txtbox_klasa" HorizontalAlignment="Left" Margin="245,102,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Grupa:" HorizontalAlignment="Left" Margin="245,136,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_grupa" HorizontalAlignment="Left" Margin="249,167,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

@@ -32,10 +32,10 @@ namespace Sekretariat2
 
         }
 
-        public void myFunc(string imien, string drugieimien, string nazwiskou, string nazwiskopanienskieu, string imionarodzicowu, string datauruu, string peselu, string plecu)
+        public void myFunc(string imien, string drugieimien, string nazwiskou, string nazwiskopanienskieu, string imionarodzicowu, string datauruu, string peselu, string plecu, string klasau, string grupau)
         {
             //MessageBox.Show("cos");
-            ListView_Uczniowie.Items.Add(new { Imie = imien, Drugie_imie = drugieimien, Nazwisko = nazwiskou, Nazwisko_panienskie = nazwiskopanienskieu, Imiona_rodzicow = imionarodzicowu, Data_urodzenia = datauruu, Pesel = peselu, Plec = plecu});
+            ListView_Uczniowie.Items.Add(new { Imie = imien, Drugie_imie = drugieimien, Nazwisko = nazwiskou, Nazwisko_panienskie = nazwiskopanienskieu, Imiona_rodzicow = imionarodzicowu, Data_urodzenia = datauruu, Pesel = peselu, Plec = plecu, Klasa = klasau, Grupa = grupau});
         }
 
         private void Btn_Dodaj_Click(object sender, RoutedEventArgs e)

@@ -44,7 +44,10 @@ namespace Sekretariat2
             string datauru = Datepicker_dataur.Text;
             string peselu = Txtbox_pesel.Text;
             string plecu = Txtbox_plec.Text;
-            Sekretariat2.MainWindow.AppWindow.myFunc(ImieU, DrugieimieU, NazwiskoU, nazwiskopanienskieu, imionarodzicow, datauru, peselu, plecu);
+            string klasau = Txtbox_klasa.Text;
+            string grupau = Txtbox_grupa.Text;
+
+            Sekretariat2.MainWindow.AppWindow.myFunc(ImieU, DrugieimieU, NazwiskoU, nazwiskopanienskieu, imionarodzicow, datauru, peselu, plecu, klasau, grupau);
 
             //MainWindow.ListView_Uczniowie.Items.Add(row);
         }
