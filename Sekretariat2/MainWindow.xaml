@@ -55,19 +55,19 @@
                     <ListView x:Name="ListView_Nauczyciele" Margin="5,10,5,59" Grid.ColumnSpan="3">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Imie" Width="60"/>
-                                <GridViewColumn Header="Drugie Imie" Width="80"/>
-                                <GridViewColumn Header="Nazwisko" Width="80"/>
-                                <GridViewColumn Header="Nazwisko Panienskie" Width="120"/>
-                                <GridViewColumn Header="Imiona rodzicow" Width="100"/>
-                                <GridViewColumn Header="Data urodzenia" Width="100"/>
-                                <GridViewColumn Header="Pesel" Width="100"/>
-                                <GridViewColumn Header="Zdjecie" Width="100"/>
-                                <GridViewColumn Header="Plec" Width="60"/>
-                                <GridViewColumn Header="Wychowawstwo" Width="100"/>
-                                <GridViewColumn Header="Przedmioty" Width="90"/>
-                                <GridViewColumn Header="Klasy Nauczane" Width="90"/>
-                                <GridViewColumn Header="Data Zatrudnienia" Width="110"/>
+                                <GridViewColumn Header="Imie" Width="60" DisplayMemberBinding="{Binding Imien}"/>
+                                <GridViewColumn Header="Drugie Imie" Width="80" DisplayMemberBinding="{Binding Drugie_imien}"/>
+                                <GridViewColumn Header="Nazwisko" Width="80" DisplayMemberBinding="{Binding Nazwiskon}"/>
+                                <GridViewColumn Header="Nazwisko Panienskie" Width="120" DisplayMemberBinding="{Binding Nazwisko_panienskien}"/>
+                                <GridViewColumn Header="Imiona rodzicow" Width="100" DisplayMemberBinding="{Binding Imiona_rodzicown}"/>
+                                <GridViewColumn Header="Data urodzenia" Width="100" DisplayMemberBinding="{Binding Data_urodzenian}"/>
+                                <GridViewColumn Header="Pesel" Width="100" DisplayMemberBinding="{Binding Peseln}"/>
+                                <GridViewColumn Header="Zdjecie" Width="100" DisplayMemberBinding="{Binding Zdjecien}"/>
+                                <GridViewColumn Header="Plec" Width="60" DisplayMemberBinding="{Binding Plecn}"/>
+                                <GridViewColumn Header="Wychowawstwo" Width="100" DisplayMemberBinding="{Binding Wychowawstwon}"/>
+                                <GridViewColumn Header="Przedmioty" Width="90" DisplayMemberBinding="{Binding Przedmiotyn}"/>
+                                <GridViewColumn Header="Klasy Nauczane" Width="90" DisplayMemberBinding="{Binding Klasy_nauczanen}"/>
+                                <GridViewColumn Header="Data Zatrudnienia" Width="110" DisplayMemberBinding="{Binding Data_zatrudnienian}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

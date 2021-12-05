@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Nauczyciele" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Imie:" HorizontalAlignment="Left" Margin="30,23,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_imien" HorizontalAlignment="Left" Margin="30,54,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Btn_dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="164,317,0,0" VerticalAlignment="Top" Click="Btn_dodaj_Click"/>
+        <Button x:Name="Btn_powrot" Content="Powrot" HorizontalAlignment="Left" Margin="48,359,0,0" VerticalAlignment="Top" Click="Btn_powrot_Click"/>
+
     </Grid>
 </Window>

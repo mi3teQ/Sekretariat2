@@ -21,5 +21,16 @@ namespace Sekretariat2
         {
             InitializeComponent();
         }
+
+        private void Btn_powrot_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Btn_dodaj_Click(object sender, RoutedEventArgs e)
+        {
+            string imieN = Txtbox_imien.Text;
+            Sekretariat2.MainWindow.AppWindow.dodajnauczyciel(imieN);
+        }
     }
 }
