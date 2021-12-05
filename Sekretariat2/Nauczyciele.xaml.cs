@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace Sekretariat2
 {
@@ -30,7 +31,23 @@ namespace Sekretariat2
         private void Btn_dodaj_Click(object sender, RoutedEventArgs e)
         {
             string imieN = Txtbox_imien.Text;
-            Sekretariat2.MainWindow.AppWindow.dodajnauczyciel(imieN);
+            string drugieimien = Txtbox_drugieimien.Text;
+            string nazwiskon = Txtbox_nazwiskon.Text;
+            string nazwiskopanienskien = Txtbox_nazwiskopanienskien.Text;
+            string imionarodzicown = Txtbox_imionarodzicown.Text;
+            string dataurn = Datepickern.Text;
+            string peseln = Txtbox_peseln.Text;
+            string plecn = txtbox_plecn.Text;
+            string wychowawstwon = Txtbox_wychowawstwon.Text;
+            string przedmiotyn = Txtbox_przedmiotyn.Text;
+            string klasynauczanen = Txtbox_klasynaczuanen.Text;
+            string wybierzdate = wybierzdaten.Text; 
+            Sekretariat2.MainWindow.AppWindow.dodajnauczyciel(imieN, drugieimien, nazwiskon, nazwiskopanienskien, imionarodzicown, dataurn, peseln, plecn, wychowawstwon, przedmiotyn, klasynauczanen, wybierzdate);
+        }
+
+        private void Txtbox_peseln_previewtextinput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
         }
     }
 }

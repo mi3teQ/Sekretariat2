@@ -37,9 +37,9 @@ namespace Sekretariat2
             //MessageBox.Show("cos");
             ListView_Uczniowie.Items.Add(new { Imie = imieu, Drugie_imie = drugieimieu, Nazwisko = nazwiskou, Nazwisko_panienskie = nazwiskopanienskieu, Imiona_rodzicow = imionarodzicowu, Data_urodzenia = datauruu, Pesel = peselu, Plec = plecu, Klasa = klasau, Grupa = grupau});
         }
-        public void dodajnauczyciel(string imien)
+        public void dodajnauczyciel(string imien, string drugieimien, string nazwiskon, string nazwiskopanienskien, string imionardzicown, string dataurn, string peseln, string plecn, string wychowawstwon, string przedmiotyn, string klasynaczuane, string wybierzdate)
         {
-            ListView_Nauczyciele.Items.Add(new {Imien = imien });
+            ListView_Nauczyciele.Items.Add(new {Imien = imien, Drugie_imien = drugieimien, Nazwiskon = nazwiskon, Nazwisko_panienskien = nazwiskopanienskien, Imiona_rodzicown = imionardzicown, Data_urodzenian = dataurn, Peseln = peseln, Plecn = plecn, Wychowawstwon = wychowawstwon, Przedmiotyn = przedmiotyn, Klasy_nauczanen = klasynaczuane, Data_zatrudnienian  = wybierzdate});
         }
 
 
@@ -88,5 +88,7 @@ namespace Sekretariat2
                 //this.Close();
             }
         }
+
+       
     }
 }

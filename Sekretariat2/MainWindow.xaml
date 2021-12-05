@@ -60,7 +60,7 @@
                                 <GridViewColumn Header="Nazwisko" Width="80" DisplayMemberBinding="{Binding Nazwiskon}"/>
                                 <GridViewColumn Header="Nazwisko Panienskie" Width="120" DisplayMemberBinding="{Binding Nazwisko_panienskien}"/>
                                 <GridViewColumn Header="Imiona rodzicow" Width="100" DisplayMemberBinding="{Binding Imiona_rodzicown}"/>
-                                <GridViewColumn Header="Data urodzenia" Width="100" DisplayMemberBinding="{Binding Data_urodzenian}"/>
+                                <GridViewColumn Header="Data urodzenia" Width="100" DisplayMemberBinding="{Binding Data_urodzenian, StringFormat=d}"/>
                                 <GridViewColumn Header="Pesel" Width="100" DisplayMemberBinding="{Binding Peseln}"/>
                                 <GridViewColumn Header="Zdjecie" Width="100" DisplayMemberBinding="{Binding Zdjecien}"/>
                                 <GridViewColumn Header="Plec" Width="60" DisplayMemberBinding="{Binding Plecn}"/>
