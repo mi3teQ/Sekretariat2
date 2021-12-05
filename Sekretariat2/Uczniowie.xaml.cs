@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
-
+using System.Text.RegularExpressions;
 
 namespace Sekretariat2
 {
@@ -41,7 +41,10 @@ namespace Sekretariat2
             string NazwiskoU = Txtbox_Nazwisko.Text;
             string nazwiskopanienskieu = Txtbox_nazwiskopanienskie.Text;
             string imionarodzicow = Txtbox_imionarodzicow.Text;
-            Sekretariat2.MainWindow.AppWindow.myFunc(ImieU, DrugieimieU, NazwiskoU, nazwiskopanienskieu, imionarodzicow);
+            string datauru = Datepicker_dataur.Text;
+            string peselu = Txtbox_pesel.Text;
+            string plecu = Txtbox_plec.Text;
+            Sekretariat2.MainWindow.AppWindow.myFunc(ImieU, DrugieimieU, NazwiskoU, nazwiskopanienskieu, imionarodzicow, datauru, peselu, plecu);
 
             //MainWindow.ListView_Uczniowie.Items.Add(row);
         }
@@ -55,5 +58,12 @@ namespace Sekretariat2
                 Fotka_Uczen.Source = new BitmapImage(new Uri(op.FileName));
             }
         }
+
+        private void Txtbox_pesel_previewtextinput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        
     }
 }
