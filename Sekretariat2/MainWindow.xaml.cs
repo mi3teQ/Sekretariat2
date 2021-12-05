@@ -32,9 +32,10 @@ namespace Sekretariat2
 
         }
 
-        public void myFunc(string imie)
+        public void myFunc(string imien, string drugieimien, string nazwiskou, string nazwiskopanienskieu, string imionarodzicowu)
         {
-            ListView_Uczniowie.Items.Add(imie);
+            //MessageBox.Show("cos");
+            ListView_Uczniowie.Items.Add(new { Imie = imien, Drugie_imie = drugieimien, Nazwisko = nazwiskou, Nazwisko_panienskie = nazwiskopanienskieu, Imiona_Rodzicow = imionarodzicowu});
         }
 
         private void Btn_Dodaj_Click(object sender, RoutedEventArgs e)
@@ -43,19 +44,19 @@ namespace Sekretariat2
             {
                 var Uczniowie = new Uczniowie();
                 Uczniowie.Show();
-                this.Close();
+                //this.Close();
             }
             if (TabControl.SelectedIndex == 1)
             {
                 var Nauczyciele = new Nauczyciele();
                 Nauczyciele.Show();
-                this.Close();
+                //this.Close();
             }
             if (TabControl.SelectedIndex == 2)
             {
                 var Pracownicy = new Pracownicy();
                 Pracownicy.Show();
-                this.Close();
+                //this.Close();
             }
             
         }
