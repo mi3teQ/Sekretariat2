@@ -106,6 +106,6 @@
         <Button x:Name="Btn_Zmien" Content="Zmien" HorizontalAlignment="Center" VerticalAlignment="Top" Height="29" Width="76" Margin="0,76,0,0" Grid.Column="2" Click="Btn_Zmien_Click"/>
         <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="76" Margin="0,110,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Click="Btn_Usun_Click"/>
         <Button x:Name="Btn_Zaladuj" Content="Zaldauj" Height="29" Width="78" Margin="0,144,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2"/>
-        <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="76" Margin="0,178,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2"/>
+        <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="76" Margin="0,178,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Click="Btn_Zapisz_Click"/>
     </Grid>
 </Window>

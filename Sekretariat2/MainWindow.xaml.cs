@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,6 +101,12 @@ namespace Sekretariat2
             ListView_Nauczyciele.Items.Remove(ListView_Nauczyciele.SelectedItem);
             ListView_Pracownicy.Items.Remove(ListView_Pracownicy.SelectedItem);
 
+
+        }
+
+        private void Btn_Zapisz_Click(object sender, RoutedEventArgs e)
+        {
+            
 
         }
     }
