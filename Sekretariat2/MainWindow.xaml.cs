@@ -106,7 +106,13 @@ namespace Sekretariat2
 
         private void Btn_Zapisz_Click(object sender, RoutedEventArgs e)
         {
-
+           /* using (var tw = new StreamWriter("C:/Cos.txt"))
+            {
+                foreach (ListViewItem item in ListView_Uczniowie.Items)
+                {
+                    tw.WriteLine(item);
+                }
+            }*/
         }
     }
 }
