@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="Pracownicy" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="Btn_powrot" Content="Wroc" HorizontalAlignment="Left" Margin="606,380,0,0" VerticalAlignment="Top" Click="Btn_powrot_Click"/>
+        <Label Content="Imie:" HorizontalAlignment="Left" Margin="30,26,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_imiep" HorizontalAlignment="Left" Margin="30,52,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Btn_dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="511,365,0,0" VerticalAlignment="Top" Click="Btn_dodaj_Click"/>
+        <Label Content="Drugie imie:" HorizontalAlignment="Left" Margin="30,86,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_drugieimiep" HorizontalAlignment="Left" Margin="30,117,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="30,140,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_nazwiskop" HorizontalAlignment="Left" Margin="30,171,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nazwisko panienskie:" HorizontalAlignment="Left" Margin="30,206,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_nazwiskopanienskiep" HorizontalAlignment="Left" Margin="32,237,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Imiona rodzicow" HorizontalAlignment="Left" Margin="32,260,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_imionarodzicowp" HorizontalAlignment="Left" Margin="32,291,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Dataurodzenia:" HorizontalAlignment="Left" Margin="218,10,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="Datepickerurp" HorizontalAlignment="Left" Margin="218,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="Pesel:" HorizontalAlignment="Left" Margin="218,81,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_peselp" HorizontalAlignment="Left" Margin="218,117,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txtbox_peselp_previewtextinput"/>
+        <Label Content="Plec:" HorizontalAlignment="Left" Margin="219,154,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_plecp" HorizontalAlignment="Left" Margin="219,180,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Etat:" HorizontalAlignment="Left" Margin="218,214,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_etatp" HorizontalAlignment="Left" Margin="218,246,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Opis stanowiska:" HorizontalAlignment="Left" Margin="217,282,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_opisp" HorizontalAlignment="Left" Margin="217,313,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Data zatrudnienia:" HorizontalAlignment="Left" Margin="215,336,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="Datepickerzatrudnieniep" HorizontalAlignment="Left" Margin="219,367,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

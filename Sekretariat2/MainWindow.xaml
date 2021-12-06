@@ -67,7 +67,7 @@
                                 <GridViewColumn Header="Wychowawstwo" Width="100" DisplayMemberBinding="{Binding Wychowawstwon}"/>
                                 <GridViewColumn Header="Przedmioty" Width="90" DisplayMemberBinding="{Binding Przedmiotyn}"/>
                                 <GridViewColumn Header="Klasy Nauczane" Width="90" DisplayMemberBinding="{Binding Klasy_nauczanen}"/>
-                                <GridViewColumn Header="Data Zatrudnienia" Width="110" DisplayMemberBinding="{Binding Data_zatrudnienian}"/>
+                                <GridViewColumn Header="Data Zatrudnienia" Width="110" DisplayMemberBinding="{Binding Data_zatrudnienian, StringFormat=d}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -82,18 +82,18 @@
                     <ListView x:Name="ListView_Pracownicy" Margin="5,10,5,59" Grid.ColumnSpan="3">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Imie" Width="60"/>
-                                <GridViewColumn Header="Drugie Imie" Width="80"/>
-                                <GridViewColumn Header="Nazwisko" Width="80"/>
-                                <GridViewColumn Header="Nazwisko Panienskie" Width="120"/>
-                                <GridViewColumn Header="Imiona rodzicow" Width="100"/>
-                                <GridViewColumn Header="Data urodzenia" Width="100"/>
-                                <GridViewColumn Header="Pesel" Width="100"/>
+                                <GridViewColumn Header="Imie" Width="60" DisplayMemberBinding="{Binding Imiep}"/>
+                                <GridViewColumn Header="Drugie Imie" Width="80" DisplayMemberBinding="{Binding Drugie_Imiep}"/>
+                                <GridViewColumn Header="Nazwisko" Width="80" DisplayMemberBinding="{Binding Nazwiskop}"/>
+                                <GridViewColumn Header="Nazwisko Panienskie" Width="120" DisplayMemberBinding="{Binding Nazwisko_panienskiep}"/>
+                                <GridViewColumn Header="Imiona rodzicow" Width="100" DisplayMemberBinding="{Binding Imiona_rodzicowp}"/>
+                                <GridViewColumn Header="Data urodzenia" Width="100" DisplayMemberBinding="{Binding Data_urodzeniap}"/>
+                                <GridViewColumn Header="Pesel" Width="100" DisplayMemberBinding="{Binding Peselp}"/>
                                 <GridViewColumn Header="Zdjecie" Width="100"/>
-                                <GridViewColumn Header="Plec" Width="60"/>
-                                <GridViewColumn Header="Etat" Width="60"/>
-                                <GridViewColumn Header="Opis stanowiska" Width="100"/>
-                                <GridViewColumn Header="Data zatrudnienia" Width="110"/>
+                                <GridViewColumn Header="Plec" Width="60" DisplayMemberBinding="{Binding Plecp}"/>
+                                <GridViewColumn Header="Etat" Width="60" DisplayMemberBinding="{Binding Etatp}"/>
+                                <GridViewColumn Header="Opis stanowiska" Width="100" DisplayMemberBinding="{Binding Opis_stanowiskap}"/>
+                                <GridViewColumn Header="Data zatrudnienia" Width="110" DisplayMemberBinding="{Binding Data_zatrudnieniap, StringFormat=d}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -104,7 +104,7 @@
         </TabControl>
         <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" Height="29" Width="78" Grid.Column="2" Click="Btn_Dodaj_Click"/>
         <Button x:Name="Btn_Zmien" Content="Zmien" HorizontalAlignment="Center" VerticalAlignment="Top" Height="29" Width="76" Margin="0,76,0,0" Grid.Column="2" Click="Btn_Zmien_Click"/>
-        <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="76" Margin="0,110,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2"/>
+        <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="76" Margin="0,110,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Click="Btn_Usun_Click"/>
         <Button x:Name="Btn_Zaladuj" Content="Zaldauj" Height="29" Width="78" Margin="0,144,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2"/>
         <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="76" Margin="0,178,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2"/>
     </Grid>

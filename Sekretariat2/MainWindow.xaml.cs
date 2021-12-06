@@ -41,9 +41,9 @@ namespace Sekretariat2
         {
             ListView_Nauczyciele.Items.Add(new {Imien = imien, Drugie_imien = drugieimien, Nazwiskon = nazwiskon, Nazwisko_panienskien = nazwiskopanienskien, Imiona_rodzicown = imionardzicown, Data_urodzenian = dataurn, Peseln = peseln, Plecn = plecn, Wychowawstwon = wychowawstwon, Przedmiotyn = przedmiotyn, Klasy_nauczanen = klasynaczuane, Data_zatrudnienian  = wybierzdate});
         }
-        public void dodajpracownika()
+        public void dodajpracownika(string imiep, string drugieimiep, string nazwiskop, string nazwiskopanienskiep, string imionarodzicowp, string dataurp, string peselp, string plecp, string etatp, string opissatnowiskap, string datazatrudnieniap)
         {
-            ListView_Pracownicy.Items.Add(new { });
+            ListView_Pracownicy.Items.Add(new { Imiep = imiep, Drugie_Imiep = drugieimiep, Nazwiskop = nazwiskop, Nazwisko_panienskiep = nazwiskopanienskiep, Imiona_rodzicowp = imionarodzicowp, Data_urodzeniap = dataurp, Peselp = peselp, Plecp = plecp, Etatp = etatp, Opis_stanowiskap = opissatnowiskap, Data_zatrudnieniap = datazatrudnieniap });
         }
 
 
@@ -93,6 +93,13 @@ namespace Sekretariat2
             }
         }
 
-       
+        private void Btn_Usun_Click(object sender, RoutedEventArgs e)
+        {
+            ListView_Uczniowie.Items.Remove(ListView_Uczniowie.SelectedItem);
+            ListView_Nauczyciele.Items.Remove(ListView_Nauczyciele.SelectedItem);
+            ListView_Pracownicy.Items.Remove(ListView_Pracownicy.SelectedItem);
+
+
+        }
     }
 }
