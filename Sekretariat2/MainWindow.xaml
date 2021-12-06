@@ -16,13 +16,13 @@
             <RowDefinition Height="421*"/>
             <RowDefinition Height="34*"/>
         </Grid.RowDefinitions>
-        <TabControl x:Name="TabControl" Grid.RowSpan="2" Grid.ColumnSpan="3" x:FieldModifier="public" >
-            <TabItem Header="Uczniowie" >
+        <TabControl x:Name="TabControl" Grid.RowSpan="2" Grid.ColumnSpan="3" x:FieldModifier="public" Margin="0,62,0,-166" >
+            <TabItem Header="Uczniowie" Margin="-2,-1,-2,-1" >
                 <Grid Background="#FFE5E5E5" Margin="0,0,159,107" Height="339">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="89*"/>
-                        <ColumnDefinition Width="94*"/>
-                        <ColumnDefinition Width="377*"/>
+                        <ColumnDefinition Width="67*"/>
+                        <ColumnDefinition Width="71*"/>
+                        <ColumnDefinition Width="852.289"/>
                     </Grid.ColumnDefinitions>
                     <ListView x:Name="ListView_Uczniowie" Margin="5,10,5,59" Grid.ColumnSpan="3" x:FieldModifier="public">
                         <ListView.View>
@@ -34,7 +34,7 @@
                                 <GridViewColumn Header="Imiona rodzicow" Width="100" DisplayMemberBinding="{Binding Imiona_rodzicow}"/>
                                 <GridViewColumn Header="Data urodzenia" Width="100" DisplayMemberBinding="{Binding Data_urodzenia, StringFormat=d}"/>
                                 <GridViewColumn Header="Pesel" Width="100" DisplayMemberBinding="{Binding Pesel}" />
-                                
+
                                 <GridViewColumn Header="Plec" Width="60" DisplayMemberBinding="{Binding Plec}"/>
                                 <GridViewColumn Header="Klasa" Width="60" DisplayMemberBinding="{Binding Klasa}"/>
                                 <GridViewColumn Header="Grupa" Width="60" DisplayMemberBinding="{Binding Grupa}"/>
@@ -99,13 +99,19 @@
                     </ListView>
                 </Grid>
             </TabItem>
+            <Menu/>
+            <Menu/>
 
 
         </TabControl>
-        <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" Height="29" Width="78" Grid.Column="2" Click="Btn_Dodaj_Click"/>
-        <Button x:Name="Btn_Zmien" Content="Zmien" HorizontalAlignment="Center" VerticalAlignment="Top" Height="29" Width="76" Margin="0,76,0,0" Grid.Column="2" Click="Btn_Zmien_Click"/>
-        <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="76" Margin="0,110,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Click="Btn_Usun_Click"/>
-        <Button x:Name="Btn_Zaladuj" Content="Zaldauj" Height="29" Width="78" Margin="0,144,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2"/>
-        <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="76" Margin="0,178,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Click="Btn_Zapisz_Click"/>
+        <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="43,168,0,0" VerticalAlignment="Top" Height="29" Width="78" Grid.Column="2" Click="Btn_Dodaj_Click"/>
+        <Button x:Name="Btn_Zmien" Content="Zmien" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="76" Margin="41,202,0,0" Grid.Column="2" Click="Btn_Zmien_Click"/>
+        <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="76" Margin="41,236,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Click="Btn_Usun_Click"/>
+        <Button x:Name="Btn_Zaladuj" Content="Zaldauj" Height="29" Width="78" Margin="41,270,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2"/>
+        <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="76" Margin="41,304,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="2" Click="Btn_Zapisz_Click"/>
+        <Menu Grid.ColumnSpan="2" Margin="0,0,0,364" HorizontalAlignment="Left" Width="954">
+            <MenuItem Header="Plik" Height="46" Width="83"/>
+            <MenuItem Header="Pomoc" Height="48" Width="83"/>
+        </Menu>
     </Grid>
 </Window>

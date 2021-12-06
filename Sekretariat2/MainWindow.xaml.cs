@@ -106,7 +106,6 @@ namespace Sekretariat2
 
         private void Btn_Zapisz_Click(object sender, RoutedEventArgs e)
         {
-            
 
         }
     }
