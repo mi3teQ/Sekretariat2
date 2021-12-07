@@ -106,13 +106,103 @@ namespace Sekretariat2
 
         private void Btn_Zapisz_Click(object sender, RoutedEventArgs e)
         {
-           /* using (var tw = new StreamWriter("C:/Cos.txt"))
-            {
-                foreach (ListViewItem item in ListView_Uczniowie.Items)
+            if (TabControl.SelectedIndex == 0) { 
+
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Txt file|*.txt";
+            if (dialog.ShowDialog() == true)
+
+
+                using (StreamWriter theWriter = new StreamWriter(dialog.FileName))
                 {
-                    tw.WriteLine(item);
+
+                        {
+                            foreach (var item in ListView_Uczniowie.Items)
+                            {
+                                dynamic selected1 = item;
+                                var imieu = selected1.Imie;
+                                var drugieimieu = selected1.Drugie_imie;
+                                var nazwiskou = selected1.Nazwisko;
+                                var Nazwiskopanienskieu = selected1.Nazwisko_panienskie;
+                                var Imionarodzicowu = selected1.Imiona_rodzicow;
+                                var Dataurodzeniau = selected1.Data_urodzenia;
+                                var Peselu = selected1.Pesel;
+                                var Plecu = selected1.Plec;
+                                var Klasau = selected1.Klasa;
+                                var Grupau = selected1.Grupa;
+
+
+                                theWriter.Write(imieu + "," + drugieimieu + "," + nazwiskou + "," + Nazwiskopanienskieu + "," + Imionarodzicowu + "," + Dataurodzeniau + "," + Peselu + "," + Plecu + "," + Klasau + "," + Grupau + "\n");
+
+                            }
+                        }
                 }
-            }*/
+            }
+            if (TabControl.SelectedIndex == 1)
+            {
+                SaveFileDialog dialog1 = new SaveFileDialog();
+                dialog1.Filter = "Txt file|*.txt";
+                if (dialog1.ShowDialog() == true)
+                    using (StreamWriter theWriter = new StreamWriter(dialog1.FileName))
+                    {
+
+                        {
+                            foreach (var item in ListView_Nauczyciele.Items)
+                            {
+                                dynamic selected1 = item;
+                                var imieu = selected1.Imien;
+                                var drugieimieu = selected1.Drugie_imien;
+                                var nazwiskou = selected1.Nazwiskon;
+                                var Nazwiskopanienskieu = selected1.Nazwisko_panienskien;
+                                var Imionarodzicowu = selected1.Imiona_rodzicown;
+                                var Dataurodzeniau = selected1.Data_urodzenian;
+                                var Peselu = selected1.Peseln;
+                                var Plecu = selected1.Plecn;
+                                var wychowastow = selected1.Wychowawstwon;
+                                var przedmioty = selected1.Przedmiotyn;
+                                var klasynauczane = selected1.Klasy_nauczanen;
+                                var datazatr = selected1.Data_zatrudnienian;
+
+
+                                theWriter.Write(imieu + "," + drugieimieu + "," + nazwiskou + "," + Nazwiskopanienskieu + "," + Imionarodzicowu + "," + Dataurodzeniau + "," + Peselu + "," + Plecu + "," + wychowastow + "," + przedmioty + "," + klasynauczane + "," + datazatr + "\n");
+
+                            }
+                        }
+                    }
+            }
+            if (TabControl.SelectedIndex == 2)
+            {
+                SaveFileDialog dialog2 = new SaveFileDialog();
+                dialog2.Filter = "Txt file|*.txt";
+                if (dialog2.ShowDialog() == true)
+                    using (StreamWriter theWriter = new StreamWriter(dialog2.FileName))
+                    {
+
+                        {
+                            foreach (var item in ListView_Nauczyciele.Items)
+                            {
+                                dynamic selected1 = item;
+                                var imieu = selected1.Imiep;
+                                var drugieimieu = selected1.Drugie_Imiep;
+                                var nazwiskou = selected1.Nazwiskop;
+                                var Nazwiskopanienskieu = selected1.Nazwisko_panienskiep;
+                                var Imionarodzicowu = selected1.Imiona_rodzicowp;
+                                var Dataurodzeniau = selected1.Data_urodzeniap;
+                                var Peselu = selected1.Peselp;
+                                var Plecu = selected1.Plecp;
+                                var etat = selected1.Etatp;
+                                var opisstanowiska = selected1.Opis_stanowiskap;
+                                var datazatr = selected1.Data_zatrudnieniap;
+                                
+
+
+                                theWriter.Write(imieu + "," + drugieimieu + "," + nazwiskou + "," + Nazwiskopanienskieu + "," + Imionarodzicowu + "," + Dataurodzeniau + "," + Peselu + "," + Plecu + "," + etat + "," + opisstanowiska + "," + datazatr  + "\n");
+
+                            }
+                        }
+                    }
+            
+            }
         }
     }
 }
