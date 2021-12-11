@@ -48,6 +48,22 @@ namespace Sekretariat2
         {
             ListView_Pracownicy.Items.Add(new { Imiep = imiep, Drugie_Imiep = drugieimiep, Nazwiskop = nazwiskop, Nazwisko_panienskiep = nazwiskopanienskiep, Imiona_rodzicowp = imionarodzicowp, Data_urodzeniap = dataurp, Peselp = peselp, Plecp = plecp, Etatp = etatp, Opis_stanowiskap = opissatnowiskap, Data_zatrudnieniap = datazatrudnieniap });
         }
+        /*public void edytujucznia(string imieu, string drugieimieu, string nazwiskou, string nazwiskopanienskieu, string imionarodzicowu, string datauruu, string peselu, string plecu, string klasau, string grupau)
+        {
+            dynamic selected1 = ListView_Uczniowie.SelectedItem;
+            imieu = selected1.Imie;
+            drugieimieu = selected1.Drugie_imie;
+            nazwiskou = selected1.Nazwisko;
+            nazwiskopanienskieu = selected1.Nazwisko_panienskie;
+            imionarodzicowu = selected1.Imiona_rodzicow;
+            datauruu = selected1.Data_urodzenia;
+            peselu = selected1.Pesel;
+            plecu = selected1.Plec;
+            klasau = selected1.Klasa;
+            grupau = selected1.Grupa;
+
+
+        }*/
 
 
 
