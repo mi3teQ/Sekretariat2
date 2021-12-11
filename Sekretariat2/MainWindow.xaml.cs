@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,10 +23,10 @@ namespace Sekretariat2
     /// </summary>
     /// 
 
-    
+
     public partial class MainWindow : Window
     {
-
+        Regex regex;
         public static MainWindow AppWindow;
         public MainWindow()
         {
@@ -37,11 +38,11 @@ namespace Sekretariat2
         public void myFunc(string imieu, string drugieimieu, string nazwiskou, string nazwiskopanienskieu, string imionarodzicowu, string datauruu, string peselu, string plecu, string klasau, string grupau)
         {
             //MessageBox.Show("cos");
-            ListView_Uczniowie.Items.Add(new { Imie = imieu, Drugie_imie = drugieimieu, Nazwisko = nazwiskou, Nazwisko_panienskie = nazwiskopanienskieu, Imiona_rodzicow = imionarodzicowu, Data_urodzenia = datauruu, Pesel = peselu, Plec = plecu, Klasa = klasau, Grupa = grupau});
+            ListView_Uczniowie.Items.Add(new { Imie = imieu, Drugie_imie = drugieimieu, Nazwisko = nazwiskou, Nazwisko_panienskie = nazwiskopanienskieu, Imiona_rodzicow = imionarodzicowu, Data_urodzenia = datauruu, Pesel = peselu, Plec = plecu, Klasa = klasau, Grupa = grupau });
         }
         public void dodajnauczyciel(string imien, string drugieimien, string nazwiskon, string nazwiskopanienskien, string imionardzicown, string dataurn, string peseln, string plecn, string wychowawstwon, string przedmiotyn, string klasynaczuane, string wybierzdate)
         {
-            ListView_Nauczyciele.Items.Add(new {Imien = imien, Drugie_imien = drugieimien, Nazwiskon = nazwiskon, Nazwisko_panienskien = nazwiskopanienskien, Imiona_rodzicown = imionardzicown, Data_urodzenian = dataurn, Peseln = peseln, Plecn = plecn, Wychowawstwon = wychowawstwon, Przedmiotyn = przedmiotyn, Klasy_nauczanen = klasynaczuane, Data_zatrudnienian  = wybierzdate});
+            ListView_Nauczyciele.Items.Add(new { Imien = imien, Drugie_imien = drugieimien, Nazwiskon = nazwiskon, Nazwisko_panienskien = nazwiskopanienskien, Imiona_rodzicown = imionardzicown, Data_urodzenian = dataurn, Peseln = peseln, Plecn = plecn, Wychowawstwon = wychowawstwon, Przedmiotyn = przedmiotyn, Klasy_nauczanen = klasynaczuane, Data_zatrudnienian = wybierzdate });
         }
         public void dodajpracownika(string imiep, string drugieimiep, string nazwiskop, string nazwiskopanienskiep, string imionarodzicowp, string dataurp, string peselp, string plecp, string etatp, string opissatnowiskap, string datazatrudnieniap)
         {
@@ -70,7 +71,7 @@ namespace Sekretariat2
                 Pracownicy.Show();
                 //this.Close();
             }
-            
+
         }
 
         private void Btn_Zmien_Click(object sender, RoutedEventArgs e)
@@ -106,15 +107,15 @@ namespace Sekretariat2
 
         private void Btn_Zapisz_Click(object sender, RoutedEventArgs e)
         {
-            if (TabControl.SelectedIndex == 0) { 
+            if (TabControl.SelectedIndex == 0) {
 
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "Txt file|*.txt";
-            if (dialog.ShowDialog() == true)
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "Txt file|*.txt";
+                if (dialog.ShowDialog() == true)
 
 
-                using (StreamWriter theWriter = new StreamWriter(dialog.FileName))
-                {
+                    using (StreamWriter theWriter = new StreamWriter(dialog.FileName))
+                    {
 
                         {
                             foreach (var item in ListView_Uczniowie.Items)
@@ -136,7 +137,7 @@ namespace Sekretariat2
 
                             }
                         }
-                }
+                    }
             }
             if (TabControl.SelectedIndex == 1)
             {
@@ -193,16 +194,95 @@ namespace Sekretariat2
                                 var etat = selected1.Etatp;
                                 var opisstanowiska = selected1.Opis_stanowiskap;
                                 var datazatr = selected1.Data_zatrudnieniap;
-                                
 
 
-                                theWriter.Write(imieu + "," + drugieimieu + "," + nazwiskou + "," + Nazwiskopanienskieu + "," + Imionarodzicowu + "," + Dataurodzeniau + "," + Peselu + "," + Plecu + "," + etat + "," + opisstanowiska + "," + datazatr  + "\n");
+
+                                theWriter.Write(imieu + "," + drugieimieu + "," + nazwiskou + "," + Nazwiskopanienskieu + "," + Imionarodzicowu + "," + Dataurodzeniau + "," + Peselu + "," + Plecu + "," + etat + "," + opisstanowiska + "," + datazatr + "\n");
 
                             }
                         }
                     }
-            
+
             }
         }
-    }
+
+        private void Txtbox_szukaj_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (TabControl.SelectedIndex == 0)
+            {
+                {
+                    FindListViewItem(ListView_Uczniowie);
+                }
+            }
+            if (TabControl.SelectedIndex == 1)
+            {
+                {
+                    FindListViewItem(ListView_Nauczyciele);
+                }
+            }
+            if (TabControl.SelectedIndex == 2)
+            {
+                {
+                    FindListViewItem(ListView_Pracownicy);
+                }
+            }
+        }
+
+            private void FindListViewItem(DependencyObject obj)
+            {
+                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
+                {
+                    ListViewItem lv = obj as ListViewItem;
+                    if (lv != null)
+                    {
+                        HighlightText(lv);
+                    }
+                    FindListViewItem(VisualTreeHelper.GetChild(obj as DependencyObject, i));
+                }
+            }
+
+            private void HighlightText(Object itx)
+            {
+                if (itx != null)
+                {
+                    if (itx is TextBlock)
+                    {
+                        regex = new Regex("(" + Txtbox_szukaj.Text + ")", RegexOptions.IgnoreCase);
+                        TextBlock tb = itx as TextBlock;
+                        if (Txtbox_szukaj.Text.Length == 0)
+                        {
+                            string str = tb.Text;
+                            tb.Inlines.Clear();
+                            tb.Inlines.Add(str);
+                            return;
+                        }
+                        string[] substrings = regex.Split(tb.Text);
+                        tb.Inlines.Clear();
+                        foreach (var item in substrings)
+                        {
+                            if (regex.Match(item).Success)
+                            {
+                                Run runx = new Run(item);
+                                runx.Background = Brushes.Red;
+                                tb.Inlines.Add(runx);
+                            }
+                            else
+                            {
+                                tb.Inlines.Add(item);
+                            }
+                        }
+                        return;
+                    }
+                    else
+                    {
+                        for (int i = 0; i < VisualTreeHelper.GetChildrenCount(itx as DependencyObject); i++)
+                        {
+                            HighlightText(VisualTreeHelper.GetChild(itx as DependencyObject, i));
+                        }
+                    }
+                }
+            }
+        }
+    
+    
 }

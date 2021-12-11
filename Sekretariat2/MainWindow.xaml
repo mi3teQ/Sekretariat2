@@ -112,6 +112,7 @@
 
 
 
+
         </TabControl>
         <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="43,168,0,0" VerticalAlignment="Top" Height="29" Width="78" Grid.Column="3" Click="Btn_Dodaj_Click"/>
         <Button x:Name="Btn_Zmien" Content="Zmien" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="76" Margin="41,202,0,0" Grid.Column="3" Click="Btn_Zmien_Click"/>
@@ -130,10 +131,12 @@
             <ToolBar>
                 <Button  Content="szukaj"/>
             </ToolBar>
-                     
-                             
-            
+
+
+
         </ToolBarTray>
+        <TextBox x:Name="Txtbox_szukaj" HorizontalAlignment="Left" Margin="477,132,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2" TextChanged="Txtbox_szukaj_TextChanged"/>
+        <Label Content="Szukaj:" HorizontalAlignment="Left" Margin="426,128,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>
