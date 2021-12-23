@@ -28,6 +28,7 @@ namespace Sekretariat2
     {
         Regex regex;
         public static MainWindow AppWindow;
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -48,22 +49,7 @@ namespace Sekretariat2
         {
             ListView_Pracownicy.Items.Add(new { Imiep = imiep, Drugie_Imiep = drugieimiep, Nazwiskop = nazwiskop, Nazwisko_panienskiep = nazwiskopanienskiep, Imiona_rodzicowp = imionarodzicowp, Data_urodzeniap = dataurp, Peselp = peselp, Plecp = plecp, Etatp = etatp, Opis_stanowiskap = opissatnowiskap, Data_zatrudnieniap = datazatrudnieniap });
         }
-        /*public void edytujucznia(string imieu, string drugieimieu, string nazwiskou, string nazwiskopanienskieu, string imionarodzicowu, string datauruu, string peselu, string plecu, string klasau, string grupau)
-        {
-            dynamic selected1 = ListView_Uczniowie.SelectedItem;
-            imieu = selected1.Imie;
-            drugieimieu = selected1.Drugie_imie;
-            nazwiskou = selected1.Nazwisko;
-            nazwiskopanienskieu = selected1.Nazwisko_panienskie;
-            imionarodzicowu = selected1.Imiona_rodzicow;
-            datauruu = selected1.Data_urodzenia;
-            peselu = selected1.Pesel;
-            plecu = selected1.Plec;
-            klasau = selected1.Klasa;
-            grupau = selected1.Grupa;
-
-
-        }*/
+        
 
 
 
@@ -96,6 +82,10 @@ namespace Sekretariat2
             {
                 var Uczniowie = new Uczniowie();
                 Uczniowie.Show();
+                dynamic selected1 = ListView_Uczniowie.SelectedItem;
+                var imieu = selected1.Imie;
+                Uczniowie.Txtbox_Imie = imieu;
+
                 //this.Close();
             }
             if (TabControl.SelectedIndex == 1)
@@ -298,7 +288,40 @@ namespace Sekretariat2
                     }
                 }
             }
+
+
+
+
+        private void LoadTextIntoListView(ListView listView)
+        {
+           
         }
+
+
+
+        private void Btn_Zaladuj_Click(object sender, RoutedEventArgs e)
+        {
+            if (TabControl.SelectedIndex == 0)
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "TXT files|*.txt";
+                var dialogResult = ofd.ShowDialog();
+                if (dialogResult == true)
+                
+                {
+                    foreach (var line in System.IO.File.ReadLines(ofd.FileName))
+                    {
+                        if (line.Contains(","))
+                        {
+                            ListView_Uczniowie.Items.Add(line);
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
     
     
 }

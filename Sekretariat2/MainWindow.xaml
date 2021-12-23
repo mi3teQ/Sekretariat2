@@ -114,10 +114,10 @@
 
 
         </TabControl>
-        <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="43,168,0,0" VerticalAlignment="Top" Height="29" Width="78" Grid.Column="3" Click="Btn_Dodaj_Click"/>
+        <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="41,168,0,0" VerticalAlignment="Top" Height="29" Width="78" Grid.Column="3" Click="Btn_Dodaj_Click"/>
         <Button x:Name="Btn_Zmien" Content="Zmien" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="76" Margin="41,202,0,0" Grid.Column="3" Click="Btn_Zmien_Click"/>
         <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="76" Margin="41,236,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="3" Click="Btn_Usun_Click"/>
-        <Button x:Name="Btn_Zaladuj" Content="Zaldauj" Height="29" Width="78" Margin="41,270,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="3"/>
+        <Button x:Name="Btn_Zaladuj" Content="Zaldauj" Height="29" Width="78" Margin="39,270,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="3" Click="Btn_Zaladuj_Click"/>
         <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="76" Margin="41,304,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="3" Click="Btn_Zapisz_Click"/>
         <Menu Grid.ColumnSpan="3" Margin="0,0,0,474" HorizontalAlignment="Left" Width="954">
             <MenuItem Header="Plik" Height="46" Width="83"/>
