@@ -275,7 +275,7 @@ namespace Sekretariat2
                     {
 
                         {
-                            foreach (var item in ListView_Nauczyciele.Items)
+                            foreach (var item in ListView_Pracownicy.Items)
                             {
                                 dynamic selected1 = item;
                                 var imieu = selected1.Imiep;

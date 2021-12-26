@@ -98,7 +98,7 @@
                                 <GridViewColumn Header="Imiona rodzicow" Width="100" DisplayMemberBinding="{Binding Imiona_rodzicowp}"/>
                                 <GridViewColumn Header="Data urodzenia" Width="100" DisplayMemberBinding="{Binding Data_urodzeniap}"/>
                                 <GridViewColumn Header="Pesel" Width="100" DisplayMemberBinding="{Binding Peselp}"/>
-                                <GridViewColumn Header="Zdjecie" Width="100"/>
+                                <GridViewColumn Header="Zdjecie" Width="100" DisplayMemberBinding="{Binding zdjeciep}"/>
                                 <GridViewColumn Header="Plec" Width="60" DisplayMemberBinding="{Binding Plecp}"/>
                                 <GridViewColumn Header="Etat" Width="60" DisplayMemberBinding="{Binding Etatp}"/>
                                 <GridViewColumn Header="Opis stanowiska" Width="100" DisplayMemberBinding="{Binding Opis_stanowiskap}"/>
