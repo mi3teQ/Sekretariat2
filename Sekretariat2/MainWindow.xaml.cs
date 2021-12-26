@@ -84,21 +84,92 @@ namespace Sekretariat2
                 Uczniowie.Show();
                 dynamic selected1 = ListView_Uczniowie.SelectedItem;
                 var imieu = selected1.Imie;
-                Uczniowie.Txtbox_Imie = imieu;
+                var drugieimieu = selected1.Drugie_imie;
+                var nazwiskou = selected1.Nazwisko;
+                var Nazwiskopanienskieu = selected1.Nazwisko_panienskie;
+                var Imionarodzicowu = selected1.Imiona_rodzicow;
+                var Dataurodzeniau = selected1.Data_urodzenia;
+                var Peselu = selected1.Pesel;
+                var Plecu = selected1.Plec;
+                var Klasau = selected1.Klasa;
+                var Grupau = selected1.Grupa;
 
-                //this.Close();
+                Uczniowie.Txtbox_Imie.Text = imieu;
+                Uczniowie.Txtbox_Drugieimie.Text = drugieimieu;
+                Uczniowie.Txtbox_Nazwisko.Text = nazwiskou;
+                Uczniowie.Txtbox_nazwiskopanienskie.Text = Nazwiskopanienskieu;
+                Uczniowie.Txtbox_imionarodzicow.Text = Imionarodzicowu;
+                //Uczniowie.Datepicker_dataur.SelectedDate = Dataurodzeniau;
+                Uczniowie.Txtbox_pesel.Text = Peselu;
+                Uczniowie.Txtbox_plec.Text = Plecu;
+                Uczniowie.Txtbox_klasa.Text = Klasau;
+                Uczniowie.Txtbox_grupa.Text = Grupau;
+
+                
             }
             if (TabControl.SelectedIndex == 1)
             {
                 var Nauczyciele = new Nauczyciele();
                 Nauczyciele.Show();
-                //this.Close();
+                dynamic selected2 = ListView_Nauczyciele.SelectedItem;
+                var imieu = selected2.Imien;
+                var drugieimieu = selected2.Drugie_imien;
+                var nazwiskou = selected2.Nazwiskon;
+                var Nazwiskopanienskieu = selected2.Nazwisko_panienskien;
+                var Imionarodzicowu = selected2.Imiona_rodzicown;
+                var Dataurodzeniau = selected2.Data_urodzenian;
+                var Peselu = selected2.Peseln;
+                var Plecu = selected2.Plecn;
+                var wychowastow = selected2.Wychowawstwon;
+                var przedmioty = selected2.Przedmiotyn;
+                var klasynauczane = selected2.Klasy_nauczanen;
+                var datazatr = selected2.Data_zatrudnienian;
+
+                Nauczyciele.Txtbox_imien.Text = imieu;
+                Nauczyciele.Txtbox_drugieimien.Text = drugieimieu;
+                Nauczyciele.Txtbox_nazwiskon.Text = nazwiskou;
+                Nauczyciele.Txtbox_nazwiskopanienskien.Text = Nazwiskopanienskieu;
+                Nauczyciele.Txtbox_imionarodzicown.Text = Imionarodzicowu;
+                // Nauczyciele.Datepickern.SelectedDate = Dataurodzeniau;
+                Nauczyciele.Txtbox_peseln.Text = Peselu;
+                Nauczyciele.txtbox_plecn.Text = Plecu;
+                Nauczyciele.Txtbox_wychowawstwon.Text = wychowastow;
+                Nauczyciele.Txtbox_przedmiotyn.Text = przedmioty;
+                Nauczyciele.Txtbox_klasynaczuanen.Text = klasynauczane;
+                //Nauczyciele.wybierzdaten.SelectedDate = datazatr;
+
+
             }
             if (TabControl.SelectedIndex == 2)
             {
                 var Pracownicy = new Pracownicy();
                 Pracownicy.Show();
-                //this.Close();
+
+                dynamic selected1 = ListView_Pracownicy.SelectedItem;
+                var imieu = selected1.Imiep;
+                var drugieimieu = selected1.Drugie_Imiep;
+                var nazwiskou = selected1.Nazwiskop;
+                var Nazwiskopanienskieu = selected1.Nazwisko_panienskiep;
+                var Imionarodzicowu = selected1.Imiona_rodzicowp;
+                var Dataurodzeniau = selected1.Data_urodzeniap;
+                var Peselu = selected1.Peselp;
+                var Plecu = selected1.Plecp;
+                var etat = selected1.Etatp;
+                var opisstanowiska = selected1.Opis_stanowiskap;
+                var datazatr = selected1.Data_zatrudnieniap;
+
+
+                Pracownicy.Txtbox_imiep.Text = imieu;
+                Pracownicy.Txtbox_drugieimiep.Text = drugieimieu;
+                Pracownicy.Txtbox_nazwiskop.Text = nazwiskou;
+                Pracownicy.Txtbox_nazwiskopanienskiep.Text = Nazwiskopanienskieu;
+                Pracownicy.Txtbox_imionarodzicowp.Text = Imionarodzicowu;
+               //Pracownicy.Datepickerurp.SelectedDate = Dataurodzeniau;
+                Pracownicy.Txtbox_peselp.Text = Peselu;
+                Pracownicy.Txtbox_plecp.Text = Plecu;
+                Pracownicy.Txtbox_etatp.Text = etat;
+                Pracownicy.Txtbox_opisp.Text = opisstanowiska;
+                //Pracownicy.Datepickerzatrudnieniep.SelectedDate = datazatr;
             }
         }
 
@@ -307,21 +378,23 @@ namespace Sekretariat2
                 ofd.Filter = "TXT files|*.txt";
                 var dialogResult = ofd.ShowDialog();
                 if (dialogResult == true)
-                
+
                 {
                     foreach (var line in System.IO.File.ReadLines(ofd.FileName))
                     {
-                        if (line.Contains(","))
+                        if (line.Contains(""))
                         {
-                            ListView_Uczniowie.Items.Add(line);
+                            var itemMC = new[] { line.ToString().Split(';')[0].ToString(), line.ToString().Split(';')[2].ToString(),
+                             line.ToString().Split(';')[4].ToString(), line.ToString().Split(';')[6].ToString() };
+                            ListView_Uczniowie.Items.Add(itemMC);
                         }
                     }
                 }
-
-
             }
+
         }
     }
-    
-    
 }
+    
+    
+
