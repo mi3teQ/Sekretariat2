@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,10 @@ namespace Sekretariat2
     {
         Regex regex;
         public static MainWindow AppWindow;
+        GridViewColumnHeader _lastHeaderClicked = null;
+        ListSortDirection _lastDirection = ListSortDirection.Ascending;
+        private GridViewColumnHeader listViewSortCol = null;
+        private SortAdorner listViewSortAdorner = null;
 
         public MainWindow()
         {
@@ -432,16 +437,16 @@ namespace Sekretariat2
 
                 }
             }
-                if (TabControl.SelectedIndex == 2)
-                {
-                    OpenFileDialog ofd = new OpenFileDialog();
-                    ofd.Filter = "TXT files|*.txt";
-                    var dialogResult = ofd.ShowDialog();
-                    if (dialogResult == true)
+            if (TabControl.SelectedIndex == 2)
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "TXT files|*.txt";
+                var dialogResult = ofd.ShowDialog();
+                if (dialogResult == true)
 
+                {
+                    foreach (var line in System.IO.File.ReadLines(ofd.FileName))
                     {
-                        foreach (var line in System.IO.File.ReadLines(ofd.FileName))
-                        {
 
 
 
@@ -451,13 +456,75 @@ namespace Sekretariat2
 
                     }
 
-                    }
                 }
             }
         }
+
+
+        private void lvUsersColumnHeader_Click(object sender, RoutedEventArgs e)
+        {
+            GridViewColumnHeader column = (sender as GridViewColumnHeader);
+            string sortBy = column.Tag.ToString();
+            if (listViewSortCol != null)
+            {
+                AdornerLayer.GetAdornerLayer(listViewSortCol).Remove(listViewSortAdorner);
+                ListView_Uczniowie.Items.SortDescriptions.Clear();
+            }
+
+            ListSortDirection newDir = ListSortDirection.Ascending;
+            if (listViewSortCol == column && listViewSortAdorner.Direction == newDir)
+                newDir = ListSortDirection.Descending;
+
+            listViewSortCol = column;
+            listViewSortAdorner = new SortAdorner(listViewSortCol, newDir);
+            AdornerLayer.GetAdornerLayer(listViewSortCol).Add(listViewSortAdorner);
+            ListView_Uczniowie.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
+        }
+
+        public class SortAdorner : Adorner
+        {
+            private static Geometry ascGeometry =
+                Geometry.Parse("M 0 4 L 3.5 0 L 7 4 Z");
+
+            private static Geometry descGeometry =
+                Geometry.Parse("M 0 0 L 3.5 4 L 7 0 Z");
+
+            public ListSortDirection Direction { get; private set; }
+
+            public SortAdorner(UIElement element, ListSortDirection dir)
+                : base(element)
+            {
+                this.Direction = dir;
+            }
+
+            protected override void OnRender(DrawingContext drawingContext)
+            {
+                base.OnRender(drawingContext);
+
+                if (AdornedElement.RenderSize.Width < 20)
+                    return;
+
+                TranslateTransform transform = new TranslateTransform
+                    (
+                        AdornedElement.RenderSize.Width - 15,
+                        (AdornedElement.RenderSize.Height - 5) / 2
+                    );
+                drawingContext.PushTransform(transform);
+
+                Geometry geometry = ascGeometry;
+                if (this.Direction == ListSortDirection.Descending)
+                    geometry = descGeometry;
+                drawingContext.DrawGeometry(Brushes.Black, null, geometry);
+
+                drawingContext.Pop();
+            }
+
+        }
+
+
+            private void btn_sortowanie_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
-
-    
-
-
-
+}

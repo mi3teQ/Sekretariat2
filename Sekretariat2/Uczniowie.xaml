@@ -13,7 +13,7 @@
         <Button x:Name="Btn_Wroc" Content="Powrot" HorizontalAlignment="Left" Margin="288,353,0,0" VerticalAlignment="Top" Click="Btn_Wroc_Click"/>
         <Label Content="Imie:" HorizontalAlignment="Left" Margin="31,14,0,0" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="835,27,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="Fotka_Uczen" HorizontalAlignment="Left" Height="125" Margin="593,182,0,0" VerticalAlignment="Top" Width="123"/>
+        <Image x:Name="Fotka_Uczen" HorizontalAlignment="Left" Height="125" Margin="581,185,0,0" VerticalAlignment="Top" Width="123"/>
         <Button x:Name="Wybierz_zdjecie" Content="Wybierz zdjecie" HorizontalAlignment="Left" Margin="593,330,0,0" VerticalAlignment="Top" Click="Wybierz_zdjecie_Click"/>
         <TextBox x:Name="Txtbox_Drugieimie" HorizontalAlignment="Left" Margin="31,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Drugie imie:" HorizontalAlignment="Left" Margin="31,63,0,0" VerticalAlignment="Top"/>

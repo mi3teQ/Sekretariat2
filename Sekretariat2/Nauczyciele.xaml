@@ -34,6 +34,8 @@
         <TextBox x:Name="Txtbox_klasynaczuanen" HorizontalAlignment="Left" Margin="354,77,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="data zatrudnienia:" HorizontalAlignment="Left" Margin="354,134,0,0" VerticalAlignment="Top"/>
         <Button x:Name="Btn_zapisz" Content="Zapisz" HorizontalAlignment="Left" Margin="180,359,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_zdjecie" Content="Wczytaj zdjecie" HorizontalAlignment="Left" Margin="652,309,0,0" VerticalAlignment="Top" Click="btn_zdjecie_Click"/>
+        <Image x:Name="zdjecienauczyciel" HorizontalAlignment="Left" Height="100" Margin="652,166,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

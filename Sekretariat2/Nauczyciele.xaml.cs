@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using Microsoft.Win32;
 
 namespace Sekretariat2
 {
@@ -48,6 +49,16 @@ namespace Sekretariat2
         private void Txtbox_peseln_previewtextinput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void btn_zdjecie_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = "Wybierz zdjecie";
+            if (op.ShowDialog() == true)
+            {
+                zdjecienauczyciel.Source = new BitmapImage(new Uri(op.FileName));
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -49,6 +50,16 @@ namespace Sekretariat2
         private void Txtbox_peselp_previewtextinput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = new Regex("[^0-9]+").IsMatch(e.Text);
+        }
+
+        private void Btn_zdjecie_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = "Wybierz zdjecie";
+            if (op.ShowDialog() == true)
+            {
+                zdjeciepracownik.Source = new BitmapImage(new Uri(op.FileName));
+            }
         }
     }
 }

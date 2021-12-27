@@ -3,12 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:s="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:p="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Sekretariat2"
         mc:Ignorable="d"
         Title="MainWindow" Height="620" Width="1395">
+
     <Grid Margin="0,0,0,17">
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="664*"/>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="607*"/>
             <ColumnDefinition Width="237*"/>
             <ColumnDefinition Width="366*"/>
             <ColumnDefinition Width="128*"/>
@@ -17,7 +22,7 @@
             <RowDefinition Height="421*"/>
             <RowDefinition Height="34*"/>
         </Grid.RowDefinitions>
-        <TabControl x:Name="TabControl" Grid.ColumnSpan="4" x:FieldModifier="public" Margin="1,136,-1,-18" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" >
+        <TabControl x:Name="TabControl" Grid.ColumnSpan="5" x:FieldModifier="public" Margin="1,136,-1,-18" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" >
             <TabControl.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -33,20 +38,75 @@
                         <ColumnDefinition Width="71*"/>
                         <ColumnDefinition Width="852.289"/>
                     </Grid.ColumnDefinitions>
-                    <ListView x:Name="ListView_Uczniowie" Margin="5,10,5,59" Grid.ColumnSpan="3" x:FieldModifier="public">
+                    <ListView x:Name="ListView_Uczniowie" Margin="5,10,5,59" Grid.ColumnSpan="3" >
+                        <ListView.Resources>
+                            <DataTemplate x:Key="HeaderTemplateArrowUp">
+                                <DockPanel LastChildFill="True" Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type GridViewColumnHeader}}}">
+                                    <Path x:Name="arrowUp" StrokeThickness="1" Fill="Gray" Data="M 5,10 L 15,10 L 10,5 L 5,10" DockPanel.Dock="Right" Width="20" HorizontalAlignment="Right" Margin="5,0,5,0" SnapsToDevicePixels="True"/>
+                                    <TextBlock Text="{Binding }" />
+                                </DockPanel>
+                            </DataTemplate>
+
+                            <DataTemplate x:Key="HeaderTemplateArrowDown">
+                                <DockPanel LastChildFill="True" Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type GridViewColumnHeader}}}">
+                                    <Path x:Name="arrowDown" StrokeThickness="1" Fill="Gray"  Data="M 5,5 L 10,10 L 15,5 L 5,5" DockPanel.Dock="Right" Width="20" HorizontalAlignment="Right" Margin="5,0,5,0" SnapsToDevicePixels="True"/>
+                                    <TextBlock Text="{Binding }" />
+                                </DockPanel>
+                            </DataTemplate>
+                        </ListView.Resources>
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Imie" Width="60" DisplayMemberBinding="{Binding Imie}"/>
-                                <GridViewColumn Header="Drugie Imie" Width="80" DisplayMemberBinding="{Binding Drugie_imie}" />
-                                <GridViewColumn Header="Nazwisko" Width="80" DisplayMemberBinding="{Binding Nazwisko}"/>
-                                <GridViewColumn Header="Nazwisko Panienskie" Width="120" DisplayMemberBinding="{Binding Nazwisko_panienskie}"/>
-                                <GridViewColumn Header="Imiona rodzicow" Width="100" DisplayMemberBinding="{Binding Imiona_rodzicow}"/>
-                                <GridViewColumn Header="Data urodzenia" Width="100" DisplayMemberBinding="{Binding Data_urodzenia, StringFormat=d}"/>
-                                <GridViewColumn Header="Pesel" Width="100" DisplayMemberBinding="{Binding Pesel}" />
+                                <GridViewColumn  DisplayMemberBinding="{Binding Imie}"  Width="60">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Imie" Click="lvUsersColumnHeader_Click">Imie</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="80" DisplayMemberBinding="{Binding Drugie_imie}" >
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Drugie imie" Click="lvUsersColumnHeader_Click">Drugie imie</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="80" DisplayMemberBinding="{Binding Nazwisko}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Nazwisko" Click="lvUsersColumnHeader_Click">Nazwisko</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="120" DisplayMemberBinding="{Binding Nazwisko_panienskie}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="nazwiskop" Click="lvUsersColumnHeader_Click">Nazwisko Panienskie</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="100" DisplayMemberBinding="{Binding Imiona_rodzicow}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Drugie imie" Click="lvUsersColumnHeader_Click">Imiona rodzicow</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding Data_urodzenia, StringFormat=d}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="dataur" Click="lvUsersColumnHeader_Click">Data urodzenia</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="100" DisplayMemberBinding="{Binding Pesel}" >
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="pesel" Click="lvUsersColumnHeader_Click">Pesel</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
 
-                                <GridViewColumn Header="Plec" Width="60" DisplayMemberBinding="{Binding Plec}"/>
-                                <GridViewColumn Header="Klasa" Width="60" DisplayMemberBinding="{Binding Klasa}"/>
-                                <GridViewColumn Header="Grupa" Width="60" DisplayMemberBinding="{Binding Grupa}"/>
+                                <GridViewColumn  Width="60" DisplayMemberBinding="{Binding Plec}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Drugie imie" Click="lvUsersColumnHeader_Click">Plec</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="60" DisplayMemberBinding="{Binding Klasa}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Drugie imie" Click="lvUsersColumnHeader_Click">Klasa</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="60" DisplayMemberBinding="{Binding Grupa}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Drugie imie" Click="lvUsersColumnHeader_Click">Grupa</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
                                 <GridViewColumn Header="Zdjecie" Width="80" >
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
@@ -54,6 +114,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
+
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -108,22 +169,23 @@
                     </ListView>
                 </Grid>
             </TabItem>
+            <Button Content="Button"/>
 
 
 
 
 
         </TabControl>
-        <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="41,168,0,0" VerticalAlignment="Top" Height="29" Width="78" Grid.Column="3" Click="Btn_Dodaj_Click"/>
-        <Button x:Name="Btn_Zmien" Content="Zmien" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="76" Margin="41,202,0,0" Grid.Column="3" Click="Btn_Zmien_Click"/>
-        <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="76" Margin="41,236,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="3" Click="Btn_Usun_Click"/>
-        <Button x:Name="Btn_Zaladuj" Content="Wczytaj" Height="29" Width="76" Margin="41,270,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="3" Click="Btn_Zaladuj_Click"/>
-        <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="76" Margin="41,304,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="3" Click="Btn_Zapisz_Click"/>
-        <Menu Grid.ColumnSpan="3" Margin="0,0,0,474" HorizontalAlignment="Left" Width="954">
+        <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="41,168,0,0" VerticalAlignment="Top" Height="29" Width="78" Grid.Column="4" Click="Btn_Dodaj_Click"/>
+        <Button x:Name="Btn_Zmien" Content="Zmien" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="76" Margin="41,202,0,0" Grid.Column="4" Click="Btn_Zmien_Click"/>
+        <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="76" Margin="41,236,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="4" Click="Btn_Usun_Click"/>
+        <Button x:Name="Btn_Zaladuj" Content="Wczytaj" Height="29" Width="76" Margin="41,270,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="4" Click="Btn_Zaladuj_Click"/>
+        <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="76" Margin="41,304,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="4" Click="Btn_Zapisz_Click"/>
+        <Menu Grid.ColumnSpan="4" Margin="0,0,0,474" HorizontalAlignment="Left" Width="954">
             <MenuItem Header="Plik" Height="46" Width="83"/>
             <MenuItem Header="Pomoc" Height="48" Width="83"/>
         </Menu>
-        <ToolBarTray HorizontalAlignment="Left" Height="43" Margin="0,69,0,0" VerticalAlignment="Top" Width="954" Grid.ColumnSpan="3">
+        <ToolBarTray HorizontalAlignment="Left" Height="43" Margin="0,69,0,0" VerticalAlignment="Top" Width="954" Grid.ColumnSpan="4">
             <ToolBar>
                 <Button Content="zaladuj"/>
                 <Button Content="zapisz" Width="65" HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -135,9 +197,12 @@
 
 
         </ToolBarTray>
-        <TextBox x:Name="Txtbox_szukaj" HorizontalAlignment="Left" Margin="477,132,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2" TextChanged="Txtbox_szukaj_TextChanged"/>
-        <Label Content="Szukaj:" HorizontalAlignment="Left" Margin="426,128,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_szukaj" HorizontalAlignment="Left" Margin="420,132,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2" TextChanged="Txtbox_szukaj_TextChanged" Grid.Column="1"/>
+        <Label Content="Szukaj:" HorizontalAlignment="Left" Margin="369,128,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+
 
 
     </Grid>
+
 </Window>
+    
