@@ -22,7 +22,7 @@
             <RowDefinition Height="421*"/>
             <RowDefinition Height="34*"/>
         </Grid.RowDefinitions>
-        <TabControl x:Name="TabControl" Grid.ColumnSpan="5" x:FieldModifier="public" Margin="1,136,-1,-18" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" >
+        <TabControl x:Name="TabControl" Grid.ColumnSpan="5" x:FieldModifier="public" Margin="4,106,-32,-21" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" >
             <TabControl.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -38,7 +38,7 @@
                         <ColumnDefinition Width="71*"/>
                         <ColumnDefinition Width="852.289"/>
                     </Grid.ColumnDefinitions>
-                    <ListView x:Name="ListView_Uczniowie" Margin="5,10,5,59" Grid.ColumnSpan="3" >
+                    <ListView x:Name="ListView_Uczniowie" Margin="5,10,5,60" Grid.ColumnSpan="3" >
                         <ListView.Resources>
                             <DataTemplate x:Key="HeaderTemplateArrowUp">
                                 <DockPanel LastChildFill="True" Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type GridViewColumnHeader}}}">
@@ -63,7 +63,7 @@
                                 </GridViewColumn>
                                 <GridViewColumn  Width="80" DisplayMemberBinding="{Binding Drugie_imie}" >
                                     <GridViewColumn.Header>
-                                        <GridViewColumnHeader Tag="Drugie imie" Click="lvUsersColumnHeader_Click">Drugie imie</GridViewColumnHeader>
+                                        <GridViewColumnHeader Tag="Drugie_imie" Click="lvUsersColumnHeader_Click">Drugie imie</GridViewColumnHeader>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
                                 <GridViewColumn  Width="80" DisplayMemberBinding="{Binding Nazwisko}">
@@ -73,38 +73,38 @@
                                 </GridViewColumn>
                                 <GridViewColumn  Width="120" DisplayMemberBinding="{Binding Nazwisko_panienskie}">
                                     <GridViewColumn.Header>
-                                        <GridViewColumnHeader Tag="nazwiskop" Click="lvUsersColumnHeader_Click">Nazwisko Panienskie</GridViewColumnHeader>
+                                        <GridViewColumnHeader Tag="Nazwisko_panienskie" Click="lvUsersColumnHeader_Click">Nazwisko Panienskie</GridViewColumnHeader>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
                                 <GridViewColumn  Width="100" DisplayMemberBinding="{Binding Imiona_rodzicow}">
                                     <GridViewColumn.Header>
-                                        <GridViewColumnHeader Tag="Drugie imie" Click="lvUsersColumnHeader_Click">Imiona rodzicow</GridViewColumnHeader>
+                                        <GridViewColumnHeader Tag="Imiona_rodzicow" Click="lvUsersColumnHeader_Click">Imiona rodzicow</GridViewColumnHeader>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
                                 <GridViewColumn Width="100" DisplayMemberBinding="{Binding Data_urodzenia, StringFormat=d}">
                                     <GridViewColumn.Header>
-                                        <GridViewColumnHeader Tag="dataur" Click="lvUsersColumnHeader_Click">Data urodzenia</GridViewColumnHeader>
+                                        <GridViewColumnHeader Tag="Data_urodzenia" Click="lvUsersColumnHeader_Click">Data urodzenia</GridViewColumnHeader>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
                                 <GridViewColumn  Width="100" DisplayMemberBinding="{Binding Pesel}" >
                                     <GridViewColumn.Header>
-                                        <GridViewColumnHeader Tag="pesel" Click="lvUsersColumnHeader_Click">Pesel</GridViewColumnHeader>
+                                        <GridViewColumnHeader Tag="Pesel" Click="lvUsersColumnHeader_Click">Pesel</GridViewColumnHeader>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
 
                                 <GridViewColumn  Width="60" DisplayMemberBinding="{Binding Plec}">
                                     <GridViewColumn.Header>
-                                        <GridViewColumnHeader Tag="Drugie imie" Click="lvUsersColumnHeader_Click">Plec</GridViewColumnHeader>
+                                        <GridViewColumnHeader Tag="Plec" Click="lvUsersColumnHeader_Click">Plec</GridViewColumnHeader>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
                                 <GridViewColumn  Width="60" DisplayMemberBinding="{Binding Klasa}">
                                     <GridViewColumn.Header>
-                                        <GridViewColumnHeader Tag="Drugie imie" Click="lvUsersColumnHeader_Click">Klasa</GridViewColumnHeader>
+                                        <GridViewColumnHeader Tag="Klasa" Click="lvUsersColumnHeader_Click">Klasa</GridViewColumnHeader>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
                                 <GridViewColumn  Width="60" DisplayMemberBinding="{Binding Grupa}">
                                     <GridViewColumn.Header>
-                                        <GridViewColumnHeader Tag="Drugie imie" Click="lvUsersColumnHeader_Click">Grupa</GridViewColumnHeader>
+                                        <GridViewColumnHeader Tag="Grupa" Click="lvUsersColumnHeader_Click">Grupa</GridViewColumnHeader>
                                     </GridViewColumn.Header>
                                 </GridViewColumn>
                                 <GridViewColumn Header="Zdjecie" Width="80" >
@@ -125,19 +125,67 @@
                     <ListView x:Name="ListView_Nauczyciele" Margin="5,10,5,59" Grid.ColumnSpan="3">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Imie" Width="60" DisplayMemberBinding="{Binding Imien}"/>
-                                <GridViewColumn Header="Drugie Imie" Width="80" DisplayMemberBinding="{Binding Drugie_imien}"/>
-                                <GridViewColumn Header="Nazwisko" Width="80" DisplayMemberBinding="{Binding Nazwiskon}"/>
-                                <GridViewColumn Header="Nazwisko Panienskie" Width="120" DisplayMemberBinding="{Binding Nazwisko_panienskien}"/>
-                                <GridViewColumn Header="Imiona rodzicow" Width="100" DisplayMemberBinding="{Binding Imiona_rodzicown}"/>
-                                <GridViewColumn Header="Data urodzenia" Width="100" DisplayMemberBinding="{Binding Data_urodzenian, StringFormat=d}"/>
-                                <GridViewColumn Header="Pesel" Width="100" DisplayMemberBinding="{Binding Peseln}"/>
+                                <GridViewColumn  Width="60" DisplayMemberBinding="{Binding Imien}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Imien" Click="lvUsersColumnHeader1_Click">Imie</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="80" DisplayMemberBinding="{Binding Drugie_imien}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Drugie_imien" Click="lvUsersColumnHeader1_Click">Drugie imie</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="80" DisplayMemberBinding="{Binding Nazwiskon}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Nazwiskon" Click="lvUsersColumnHeader1_Click">Nazwisko</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="120" DisplayMemberBinding="{Binding Nazwisko_panienskien}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Nazwisko_panienskien" Click="lvUsersColumnHeader1_Click">Nazwisko panienskie</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="100" DisplayMemberBinding="{Binding Imiona_rodzicown}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Imiona_rodzicown" Click="lvUsersColumnHeader1_Click">Imiona rodzicow</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding Data_urodzenian, StringFormat=d}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Data_urodzenian" Click="lvUsersColumnHeader1_Click">Data urodzenia</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="100" DisplayMemberBinding="{Binding Peseln}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Peseln" Click="lvUsersColumnHeader1_Click">Pesel</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
                                 <GridViewColumn Header="Zdjecie" Width="100" DisplayMemberBinding="{Binding Zdjecien}"/>
-                                <GridViewColumn Header="Plec" Width="60" DisplayMemberBinding="{Binding Plecn}"/>
-                                <GridViewColumn Header="Wychowawstwo" Width="100" DisplayMemberBinding="{Binding Wychowawstwon}"/>
-                                <GridViewColumn Header="Przedmioty" Width="90" DisplayMemberBinding="{Binding Przedmiotyn}"/>
-                                <GridViewColumn Header="Klasy Nauczane" Width="90" DisplayMemberBinding="{Binding Klasy_nauczanen}"/>
-                                <GridViewColumn Header="Data Zatrudnienia" Width="110" DisplayMemberBinding="{Binding Data_zatrudnienian, StringFormat=d}"/>
+                                <GridViewColumn  Width="60" DisplayMemberBinding="{Binding Plecn}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Plecn" Click="lvUsersColumnHeader1_Click">Plec</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="100" DisplayMemberBinding="{Binding Wychowawstwon}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Wychowawstwon" Click="lvUsersColumnHeader1_Click">Wychowawstwo</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="130" DisplayMemberBinding="{Binding Przedmiotyn}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Przedmiotyn" Click="lvUsersColumnHeader1_Click">Przedmoty nauczane</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="90" DisplayMemberBinding="{Binding Klasy_nauczanen}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Klasy_nauczanen" Click="lvUsersColumnHeader1_Click">Klasy nauczane</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="110" DisplayMemberBinding="{Binding Data_zatrudnienian, StringFormat=d}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Data_zatrudnienian" Click="lvUsersColumnHeader1_Click">Data zatrudnienia</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -152,40 +200,93 @@
                     <ListView x:Name="ListView_Pracownicy" Margin="5,10,5,59" Grid.ColumnSpan="3">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Imie" Width="60" DisplayMemberBinding="{Binding Imiep}"/>
-                                <GridViewColumn Header="Drugie Imie" Width="80" DisplayMemberBinding="{Binding Drugie_Imiep}"/>
-                                <GridViewColumn Header="Nazwisko" Width="80" DisplayMemberBinding="{Binding Nazwiskop}"/>
-                                <GridViewColumn Header="Nazwisko Panienskie" Width="120" DisplayMemberBinding="{Binding Nazwisko_panienskiep}"/>
-                                <GridViewColumn Header="Imiona rodzicow" Width="100" DisplayMemberBinding="{Binding Imiona_rodzicowp}"/>
-                                <GridViewColumn Header="Data urodzenia" Width="100" DisplayMemberBinding="{Binding Data_urodzeniap}"/>
-                                <GridViewColumn Header="Pesel" Width="100" DisplayMemberBinding="{Binding Peselp}"/>
+                                <GridViewColumn  Width="60" DisplayMemberBinding="{Binding Imiep}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Imiep" Click="lvUsersColumnHeader2_Click">Imie</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="80" DisplayMemberBinding="{Binding Drugie_Imiep}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Drugie_Imiep" Click="lvUsersColumnHeader2_Click">Drugie imie</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="80" DisplayMemberBinding="{Binding Nazwiskop}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Nazwiskop" Click="lvUsersColumnHeader2_Click">Nazwisko</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn Width="120" DisplayMemberBinding="{Binding Nazwisko_panienskiep}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Nazwisko_panienskiep" Click="lvUsersColumnHeader2_Click">Nazwisko panienskie</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="100" DisplayMemberBinding="{Binding Imiona_rodzicowp}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Imiona_rodzicowp" Click="lvUsersColumnHeader2_Click">Imiona rodzicow</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn Width="100" DisplayMemberBinding="{Binding Data_urodzeniap}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Data_urodzeniap" Click="lvUsersColumnHeader2_Click">Data urodzenia</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="100" DisplayMemberBinding="{Binding Peselp}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Peselp" Click="lvUsersColumnHeader2_Click">Pesel</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
                                 <GridViewColumn Header="Zdjecie" Width="100" DisplayMemberBinding="{Binding zdjeciep}"/>
-                                <GridViewColumn Header="Plec" Width="60" DisplayMemberBinding="{Binding Plecp}"/>
-                                <GridViewColumn Header="Etat" Width="60" DisplayMemberBinding="{Binding Etatp}"/>
-                                <GridViewColumn Header="Opis stanowiska" Width="100" DisplayMemberBinding="{Binding Opis_stanowiskap}"/>
-                                <GridViewColumn Header="Data zatrudnienia" Width="110" DisplayMemberBinding="{Binding Data_zatrudnieniap, StringFormat=d}"/>
+
+                                <GridViewColumn Width="60" DisplayMemberBinding="{Binding Plecp}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Plecp" Click="lvUsersColumnHeader2_Click">Plec</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="60" DisplayMemberBinding="{Binding Etatp}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Etatp" Click="lvUsersColumnHeader2_Click">Etat</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="100" DisplayMemberBinding="{Binding Opis_stanowiskap}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Opis_stanowiskap" Click="lvUsersColumnHeader2_Click">Opis stanowiska</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
+                                <GridViewColumn  Width="110" DisplayMemberBinding="{Binding Data_zatrudnieniap, StringFormat=d}">
+                                    <GridViewColumn.Header>
+                                        <GridViewColumnHeader Tag="Data_zatrudnieniap" Click="lvUsersColumnHeader2_Click">Data zatrudnienia</GridViewColumnHeader>
+                                    </GridViewColumn.Header>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>
                 </Grid>
             </TabItem>
-            <Button Content="Button"/>
+
 
 
 
 
 
         </TabControl>
-        <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="41,168,0,0" VerticalAlignment="Top" Height="29" Width="78" Grid.Column="4" Click="Btn_Dodaj_Click"/>
-        <Button x:Name="Btn_Zmien" Content="Zmien" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="76" Margin="41,202,0,0" Grid.Column="4" Click="Btn_Zmien_Click"/>
-        <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="76" Margin="41,236,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="4" Click="Btn_Usun_Click"/>
-        <Button x:Name="Btn_Zaladuj" Content="Wczytaj" Height="29" Width="76" Margin="41,270,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="4" Click="Btn_Zaladuj_Click"/>
-        <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="76" Margin="41,304,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="4" Click="Btn_Zapisz_Click"/>
-        <Menu Grid.ColumnSpan="4" Margin="0,0,0,474" HorizontalAlignment="Left" Width="954">
-            <MenuItem Header="Plik" Height="46" Width="83"/>
-            <MenuItem Header="Pomoc" Height="48" Width="83"/>
+        <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Center" Margin="0,129,0,0" VerticalAlignment="Top" Height="29" Width="76" Grid.Column="4" Click="Btn_Dodaj_Click"/>
+        <Button x:Name="Btn_Zmien" Content="Zmien" HorizontalAlignment="Center" VerticalAlignment="Top" Height="29" Width="76" Margin="0,163,0,0" Grid.Column="4" Click="Btn_Zmien_Click"/>
+        <Button x:Name="Btn_Usun" Content="Usun" Height="29" Width="76" Margin="0,197,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="4" Click="Btn_Usun_Click"/>
+        <Button x:Name="Btn_Zaladuj" Content="Wczytaj" Height="29" Width="76" Margin="0,231,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="4" Click="Btn_Zaladuj_Click"/>
+        <Button x:Name="Btn_Zapisz" Content="Zapisz" Height="29" Width="76" Margin="0,265,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="4" Click="Btn_Zapisz_Click"/>
+        <Menu Grid.ColumnSpan="5" Margin="0,0,0,450" HorizontalAlignment="Left" Width="1395">
+            <MenuItem Header="Plik" Height="45" Width="77">
+
+                <MenuItem Header="_Zapisz" Click="menuzapisz_Click" />
+                <MenuItem Header="_Wczytaj" Click="menuwczytaj_Click" />
+
+            </MenuItem>
+            <MenuItem Header="O aplikacji" Height="45" Width="100">
+                <MenuItem Header="_Pomoc" Click="menupomoc_Click" />
+                <MenuItem Header="_Informacje" Click="menuinformacje_Click" />
+            </MenuItem>
         </Menu>
-        <ToolBarTray HorizontalAlignment="Left" Height="43" Margin="0,69,0,0" VerticalAlignment="Top" Width="954" Grid.ColumnSpan="4">
+        <ToolBarTray HorizontalAlignment="Left" Height="43" Margin="0,50,0,0" VerticalAlignment="Top" Width="1395" Grid.ColumnSpan="5">
             <ToolBar>
                 <Button Content="zaladuj"/>
                 <Button Content="zapisz" Width="65" HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -197,8 +298,8 @@
 
 
         </ToolBarTray>
-        <TextBox x:Name="Txtbox_szukaj" HorizontalAlignment="Left" Margin="420,132,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2" TextChanged="Txtbox_szukaj_TextChanged" Grid.Column="1"/>
-        <Label Content="Szukaj:" HorizontalAlignment="Left" Margin="369,128,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="Txtbox_szukaj" HorizontalAlignment="Left" Margin="423,102,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" Grid.ColumnSpan="2" TextChanged="Txtbox_szukaj_TextChanged" Grid.Column="1"/>
+        <Label Content="Szukaj:" HorizontalAlignment="Left" Margin="372,98,0,0" VerticalAlignment="Top" Grid.Column="1"/>
 
 
 

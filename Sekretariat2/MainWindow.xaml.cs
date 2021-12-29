@@ -480,6 +480,44 @@ namespace Sekretariat2
             AdornerLayer.GetAdornerLayer(listViewSortCol).Add(listViewSortAdorner);
             ListView_Uczniowie.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
         }
+        private void lvUsersColumnHeader1_Click(object sender, RoutedEventArgs e)
+        {
+            GridViewColumnHeader column = (sender as GridViewColumnHeader);
+            string sortBy = column.Tag.ToString();
+            if (listViewSortCol != null)
+            {
+                AdornerLayer.GetAdornerLayer(listViewSortCol).Remove(listViewSortAdorner);
+                ListView_Nauczyciele.Items.SortDescriptions.Clear();
+            }
+
+            ListSortDirection newDir = ListSortDirection.Ascending;
+            if (listViewSortCol == column && listViewSortAdorner.Direction == newDir)
+                newDir = ListSortDirection.Descending;
+
+            listViewSortCol = column;
+            listViewSortAdorner = new SortAdorner(listViewSortCol, newDir);
+            AdornerLayer.GetAdornerLayer(listViewSortCol).Add(listViewSortAdorner);
+            ListView_Nauczyciele.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
+        }
+        private void lvUsersColumnHeader2_Click(object sender, RoutedEventArgs e)
+        {
+            GridViewColumnHeader column = (sender as GridViewColumnHeader);
+            string sortBy = column.Tag.ToString();
+            if (listViewSortCol != null)
+            {
+                AdornerLayer.GetAdornerLayer(listViewSortCol).Remove(listViewSortAdorner);
+                ListView_Pracownicy.Items.SortDescriptions.Clear();
+            }
+
+            ListSortDirection newDir = ListSortDirection.Ascending;
+            if (listViewSortCol == column && listViewSortAdorner.Direction == newDir)
+                newDir = ListSortDirection.Descending;
+
+            listViewSortCol = column;
+            listViewSortAdorner = new SortAdorner(listViewSortCol, newDir);
+            AdornerLayer.GetAdornerLayer(listViewSortCol).Add(listViewSortAdorner);
+            ListView_Pracownicy.Items.SortDescriptions.Add(new SortDescription(sortBy, newDir));
+        }
 
         public class SortAdorner : Adorner
         {
@@ -522,9 +560,23 @@ namespace Sekretariat2
         }
 
 
-            private void btn_sortowanie_Click(object sender, RoutedEventArgs e)
+            
+        private void menuzapisz_Click(object sender, RoutedEventArgs e)
         {
+            Btn_Zapisz.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
+        private void menuwczytaj_Click(object sender, RoutedEventArgs e)
+        {
+            Btn_Zaladuj.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
 
+        private void menupomoc_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Cos tu bedzie");
+        }
+        private void menuinformacje_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Aplikacja Sekretariat szkoly");
         }
     }
 }
