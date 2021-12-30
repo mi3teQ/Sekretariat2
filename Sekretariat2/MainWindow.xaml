@@ -8,6 +8,14 @@
         xmlns:local="clr-namespace:Sekretariat2"
         mc:Ignorable="d"
         Title="MainWindow" Height="620" Width="1395">
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" Executed="OpenCommandBinding_Executed"/>
+        <CommandBinding Command="SaveAs" Executed="SaveAsCommandBinding_Executed"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="O" Modifiers="Control" Command="Open"/>
+        <KeyBinding Key="S" Modifiers="Control" Command="SaveAs"/>
+    </Window.InputBindings>
 
     <Grid Margin="0,0,0,17">
 
@@ -277,8 +285,8 @@
         <Menu Grid.ColumnSpan="5" Margin="0,0,0,450" HorizontalAlignment="Left" Width="1395">
             <MenuItem Header="Plik" Height="45" Width="77">
 
-                <MenuItem Header="_Zapisz" Click="menuzapisz_Click" />
-                <MenuItem Header="_Wczytaj" Click="menuwczytaj_Click" />
+                <MenuItem Header="_Zapisz" Click="menuzapisz_Click"  Command="Open" InputGestureText="Ctrl+O"/>
+                <MenuItem Header="_Wczytaj" Click="menuwczytaj_Click" Command="SaveAs" InputGestureText="Ctrl+S"/>
 
             </MenuItem>
             <MenuItem Header="O aplikacji" Height="45" Width="100">

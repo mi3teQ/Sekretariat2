@@ -11,27 +11,27 @@
         <TextBox x:Name="Txtbox_Nazwisko" HorizontalAlignment="Left" Margin="31,136,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="Btn_Dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="234,368,0,0" VerticalAlignment="Top" Click="Btn_Dodaj_Click" Height="39" Width="70"/>
         <Button x:Name="Btn_Wroc" Content="Anuluj" HorizontalAlignment="Left" Margin="384,368,0,0" VerticalAlignment="Top" Click="Btn_Wroc_Click" Width="70" Height="39"/>
-        <Label Content="Imie:" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top"/>
+        <Label Content="Imie:" HorizontalAlignment="Left" Margin="33,14,0,0" VerticalAlignment="Top"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="835,27,0,0" VerticalAlignment="Top" Width="100"/>
-        <Image x:Name="Fotka_Uczen" HorizontalAlignment="Left" Height="125" Margin="621,76,0,0" VerticalAlignment="Top" Width="123"/>
-        <Button x:Name="Wybierz_zdjecie" Content="Wybierz zdjecie" HorizontalAlignment="Left" Margin="621,295,0,0" VerticalAlignment="Top" Click="Wybierz_zdjecie_Click"/>
+        <Image x:Name="Fotka_Uczen" HorizontalAlignment="Left" Height="125" Margin="611,104,0,0" VerticalAlignment="Top" Width="123"/>
+        <Button x:Name="Wybierz_zdjecie" Content="Wybierz zdjecie" HorizontalAlignment="Left" Margin="621,282,0,0" VerticalAlignment="Top" Click="Wybierz_zdjecie_Click" Height="33" Width="99"/>
         <TextBox x:Name="Txtbox_Drugieimie" HorizontalAlignment="Left" Margin="31,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Drugie imie:" HorizontalAlignment="Left" Margin="19,63,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nazwisko:" HorizontalAlignment="Left" Margin="19,111,0,0" VerticalAlignment="Top"/>
-        <Label Content="Nazwisko panienskie: " HorizontalAlignment="Left" Margin="19,164,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Drugie imie:" HorizontalAlignment="Left" Margin="31,63,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nazwisko:" HorizontalAlignment="Left" Margin="31,111,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nazwisko panienskie: " HorizontalAlignment="Left" Margin="31,164,0,0" VerticalAlignment="Top" Width="123"/>
         <TextBox x:Name="Txtbox_nazwiskopanienskie" HorizontalAlignment="Left" Margin="31,190,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Imiona rodzicow:" HorizontalAlignment="Left" Margin="20,213,0,0" VerticalAlignment="Top"/>
+        <Label Content="Imiona rodzicow:" HorizontalAlignment="Left" Margin="31,218,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="Txtbox_imionarodzicow" HorizontalAlignment="Left" Margin="31,244,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DatePicker x:Name="Datepicker_dataur" HorizontalAlignment="Left" Margin="31,293,0,0" VerticalAlignment="Top"/>
-        <Label Content="Data urodzenia:" HorizontalAlignment="Left" Margin="19,267,0,0" VerticalAlignment="Top"/>
-        <Label Content="Pesel:" HorizontalAlignment="Left" Margin="20,327,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="Datepicker_dataur" HorizontalAlignment="Left" Margin="31,295,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Data urodzenia:" HorizontalAlignment="Left" Margin="31,269,0,0" VerticalAlignment="Top"/>
+        <Label Content="Pesel:" HorizontalAlignment="Left" Margin="31,327,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="Txtbox_pesel" HorizontalAlignment="Left" Margin="31,353,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="Txtbox_pesel_previewtextinput"/>
-        <Label Content="Plec:" HorizontalAlignment="Left" Margin="238,18,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Txtbox_plec" HorizontalAlignment="Left" Margin="245,49,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Klasa:" HorizontalAlignment="Left" Margin="238,67,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Txtbox_klasa" HorizontalAlignment="Left" Margin="245,93,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Grupa:" HorizontalAlignment="Left" Margin="233,119,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Txtbox_grupa" HorizontalAlignment="Left" Margin="245,145,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Plec:" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_plec" HorizontalAlignment="Left" Margin="234,40,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Klasa:" HorizontalAlignment="Left" Margin="235,60,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_klasa" HorizontalAlignment="Left" Margin="233,86,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.482,-1.058"/>
+        <Label Content="Grupa:" HorizontalAlignment="Left" Margin="235,111,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Txtbox_grupa" HorizontalAlignment="Left" Margin="234,136,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="Btn_zapisz" Content="Zapisz" HorizontalAlignment="Left" Margin="309,368,0,0" VerticalAlignment="Top" Height="39" Width="70"/>
 
     </Grid>

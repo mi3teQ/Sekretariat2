@@ -578,5 +578,13 @@ namespace Sekretariat2
         {
             MessageBox.Show("Aplikacja Sekretariat szkoly");
         }
+        private void OpenCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Btn_Zapisz.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
+        private void SaveAsCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Btn_Zaladuj.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
     }
 }
